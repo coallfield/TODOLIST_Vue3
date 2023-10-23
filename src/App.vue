@@ -68,6 +68,7 @@ export default {
   
 }
 
+
 ::-webkit-scrollbar{
   outline: none;
 }
@@ -77,7 +78,8 @@ export default {
     margin-top: auto;
     width: auto;
     border: none;
-    height: 90vh;
+    height: 600px;
+    
   }
 
   div.sort {
@@ -140,7 +142,7 @@ export default {
   
 }
 
-@media (max-height: 590px) {
+@media (max-height: 650px) {
     .todo-wrap {
       height: 85vh !important;
     }

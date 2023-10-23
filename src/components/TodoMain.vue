@@ -19,10 +19,12 @@
         </div>
       </div>
     </TransitionGroup>
+    
   </div>
 </template>
 
 <script>
+
 export default {
   props: {
     todos: {

@@ -27,7 +27,7 @@ export default {
 
 <style scoped>
 .sort {
-    
+
   display: flex;
   margin-left: auto;
   margin-right: auto;
