@@ -2,7 +2,7 @@
   <div class="todos-wrapper">
     <TransitionGroup name="todo-list">
       <div v-for="todo in todos" :key="todo.id" class="todos">
-        <textarea wrap="hard" disabled :class="{ 'active': todo.isActive }"
+        <textarea @click="setHeight" wrap="hard" readonly :class="{ 'active': todo.isActive }"
           class="td todo-text">{{ todo.body }}</textarea>
         <div class="btns">
           <button 
@@ -40,8 +40,15 @@ export default {
     deleteTodo(todo) {
       this.$emit('deleteTodo', todo)
     },
-
+    setHeight(event) {
+        if( event.target.style.height ===  `${event.target.scrollHeight}px`){
+          event.target.style.height = '50px'
+        } else {
+          event.target.style.height = `${event.target.scrollHeight}px`
+        }
+    }
   }
+  
 }
 </script>
 

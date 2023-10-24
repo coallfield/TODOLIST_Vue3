@@ -160,7 +160,7 @@ textarea {
   max-height: 410px;
   padding: 15px 20px;
   outline: none;
-  
+  resize: none;
    
 }
 
