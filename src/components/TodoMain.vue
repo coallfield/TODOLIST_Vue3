@@ -2,8 +2,7 @@
   <div class="todos-wrapper">
     <TransitionGroup name="todo-list">
       <div v-for="todo in todos" :key="todo.id" class="todos">
-        <textarea @click="setHeight" wrap="hard" readonly :class="{ 'active': todo.isActive }"
-          class="td todo-text">{{ todo.body }}</textarea>
+        <div @click="setHeight" :class="{ 'active': todo.isActive }" class="td">{{ todo.body }}</div>         
         <div class="btns">
           <button 
               @mouseover="$event.target.classList.add('suc-btn-over')"
@@ -35,17 +34,18 @@ export default {
   methods: {
     makeSuccess(todo) {
       this.$emit('makeSuccess', todo)
-
     },
     deleteTodo(todo) {
       this.$emit('deleteTodo', todo)
     },
     setHeight(event) {
-        if( event.target.style.height ===  `${event.target.scrollHeight}px`){
+       if(event.target.style.height === '50px' && event.target.style.height === `${event.target.scrollHeight}px`) {
+          return
+       } else if(event.target.style.height !== '50px') {
           event.target.style.height = '50px'
-        } else {
+       } else {
           event.target.style.height = `${event.target.scrollHeight}px`
-        }
+       }
     }
   }
   
@@ -73,6 +73,7 @@ export default {
 
 
 .td {
+  
   box-shadow: 5px 5px 5px #999;
   overflow: hidden;
   overflow-y: scroll;
@@ -80,10 +81,23 @@ export default {
   margin-left: 10px;
   margin-top: 30px;
   width: 80%;
-  height: 50px;
+  min-height: 50px;
   border-radius: 20px;
   border: 2px solid darkslategrey;
   background-color: white;
+  padding: 10px 20px;
+
+  
+  word-wrap: break-word;
+}
+
+.open-close-btn {
+  outline: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  width: 25px;
+  max-height: 25px;
 }
 
 .btns {

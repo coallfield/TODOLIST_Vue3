@@ -142,9 +142,22 @@ export default {
   
 }
 
-@media (max-height: 650px) {
+@media (max-height: 850px) {
     .todo-wrap {
       height: 85vh !important;
+    }
+}
+
+@media (max-height: 650px) {
+    .todo-wrap {
+      height: 75vh !important;
+    }
+}
+
+
+@media (max-height: 380px) {
+    .todo-wrap {
+      height: 65vh !important;
     }
 }
 
